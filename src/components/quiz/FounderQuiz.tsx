@@ -65,7 +65,7 @@ export function FounderQuiz() {
     try {
       await fetch('https://script.google.com/macros/s/AKfycbzoFfi5KNM5WvimJOEfEaoZ7AKB97KLv7ouuBgaKEv-t_HOSdAG63kRzZLcqqX75iqA/exec', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify({
           email,
           archetype: result.archetype.id,
