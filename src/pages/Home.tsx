@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { 
-  TrendingUp, Users, Zap, Globe, 
-  ArrowRight, Briefcase, Lightbulb, Map 
+import {
+  TrendingUp, Users, Zap, Globe,
+  ArrowRight, Briefcase, Lightbulb, Map
 } from 'lucide-react';
 import { useLocale } from '@/contexts/LocaleContext';
 import { useAudience } from '@/contexts/AudienceContext';
@@ -10,6 +10,7 @@ import { GlassCard } from '@/components/glass/GlassCard';
 import { MetricCard } from '@/components/glass/MetricCard';
 import { AudienceSwitch } from '@/components/ux/AudienceSwitch';
 import { Button } from '@/components/ui/button';
+import { Logo } from '@/components/ui/logo';
 import metrics from '@/data/nst2/metrics.json';
 
 const containerVariants = {
@@ -93,7 +94,7 @@ export function Home() {
     {
       id: 'agritech',
       title: locale === 'en' ? 'AgriTech & Smart Farming' : 'AgriTech n\'Ubuhinzi',
-      description: locale === 'en' 
+      description: locale === 'en'
         ? 'Digital platforms for farm management and supply chain optimization'
         : 'Imbugankoranyambaga zo gucunga ubuso no guhindura imigendekere',
       icon: <TrendingUp className="w-6 h-6" />,
@@ -131,7 +132,7 @@ export function Home() {
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            animate={{ 
+            animate={{
               scale: [1, 1.2, 1],
               opacity: [0.3, 0.5, 0.3]
             }}
@@ -139,7 +140,7 @@ export function Home() {
             className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl"
           />
           <motion.div
-            animate={{ 
+            animate={{
               scale: [1.2, 1, 1.2],
               opacity: [0.2, 0.4, 0.2]
             }}
@@ -195,8 +196,8 @@ export function Home() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Link to="/opportunity-atlas">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-emerald-500/25"
               >
                 {isInvestor ? (
@@ -207,8 +208,8 @@ export function Home() {
               </Button>
             </Link>
             <Link to="/nst2-explorer">
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="lg"
                 className="border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-xl"
               >
@@ -252,7 +253,7 @@ export function Home() {
               {locale === 'en' ? 'Featured Opportunities' : 'Amahirwe Yatoranyijwe'}
             </h2>
             <p className="text-white/60 max-w-2xl mx-auto">
-              {locale === 'en' 
+              {locale === 'en'
                 ? 'Top NST2-aligned sectors with high growth potential and government support'
                 : 'Imirimo yatoranyijwe ifite amahirwe yo kukura n\'ubufasha bw\'ubuyobozi'}
             </p>
@@ -307,16 +308,16 @@ export function Home() {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link to="/startup-ideas">
-                  <Button 
-                    size="lg" 
+                  <Button
+                    size="lg"
                     className="bg-white text-slate-900 hover:bg-white/90 px-8"
                   >
                     {locale === 'en' ? 'Get Started' : 'Tangira'}
                   </Button>
                 </Link>
                 <Link to="/about">
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     size="lg"
                     className="border-white/20 text-white hover:bg-white/10"
                   >
@@ -333,12 +334,7 @@ export function Home() {
       <footer className="py-12 border-t border-white/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">KFS</span>
-              </div>
-              <span className="text-white font-semibold">KigaliFutureStack</span>
-            </div>
+            <Logo />
             <p className="text-white/50 text-sm">
               Developed by Project Future • Data sourced from NST2 2024-2029
             </p>

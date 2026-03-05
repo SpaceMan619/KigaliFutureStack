@@ -2,12 +2,13 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
+import {
   Menu, X, Globe, Briefcase, Users
 } from 'lucide-react';
 import { useLocale } from '@/contexts/LocaleContext';
 import { useAudience } from '@/contexts/AudienceContext';
 import { Button } from '@/components/ui/button';
+import { Logo } from '@/components/ui/logo';
 
 const navItems = [
   { path: '/', label: 'Home', labelRw: 'Ahabanza' },
@@ -46,12 +47,7 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">KFS</span>
-              </div>
-              <span className="text-white font-semibold hidden sm:block">KigaliFutureStack</span>
-            </Link>
+            <Logo />
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-1">
@@ -137,7 +133,7 @@ export function Navbar() {
                     {locale === 'en' ? item.label : item.labelRw}
                   </Link>
                 ))}
-                
+
                 {/* Mobile Audience Toggle */}
                 <button
                   onClick={() => {
