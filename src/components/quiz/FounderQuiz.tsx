@@ -60,9 +60,10 @@ export function FounderQuiz() {
     // Calculate results
     const result = calculateResults(state.answers, email);
 
-    // Submit to Formspree
+    // Submit to Google Sheets (replace with your Apps Script URL)
+    // Setup guide: ~/Downloads/google-sheets-setup-guide.md
     try {
-      await fetch('https://formspree.io/f/xdawnwww', {
+      await fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
