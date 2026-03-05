@@ -63,7 +63,7 @@ export function FounderQuiz() {
     // Submit to Google Sheets (replace with your Apps Script URL)
     // Setup guide: ~/Downloads/google-sheets-setup-guide.md
     try {
-      await fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbxB53f1_t-EOL-GLbgx8RnoYtp0b7n-7jEw3SrptOVHKjR_98R7KfL7wzau49aegY28/exec', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -188,15 +188,15 @@ function IntroScreen({ onStart, locale }: { onStart: () => void; locale: string 
   );
 }
 
-function QuestionScreen({ 
-  question, 
-  progress, 
-  onSelect, 
+function QuestionScreen({
+  question,
+  progress,
+  onSelect,
   onBack,
   locale,
   totalQuestions,
   currentStep
-}: { 
+}: {
   question: typeof quizQuestions[0];
   progress: number;
   onSelect: (id: string) => void;
@@ -232,14 +232,14 @@ function QuestionScreen({
             </button>
           )}
         </div>
-        
+
         <div className="flex items-center justify-between text-sm mb-2">
           <span className="text-white/60">
             {locale === 'en' ? `Question ${currentStep} of ${totalQuestions}` : `Ikibazo ${currentStep} cya ${totalQuestions}`}
           </span>
           <span className="text-white/40">{Math.round(progress)}%</span>
         </div>
-        
+
         <Progress value={progress} className="h-2 bg-white/10" />
       </div>
 
