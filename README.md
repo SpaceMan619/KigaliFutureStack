@@ -1,73 +1,53 @@
-# React + TypeScript + Vite
+# KigaliFutureStack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interactive platform connecting entrepreneurs, investors, and builders with Rwanda's National Strategy for Transformation (NST2) 2024-2029.
 
-Currently, two official plugins are available:
+![KigaliFutureStack](https://img.shields.io/badge/NST2-Aligned-brightgreen)
+![React](https://img.shields.io/badge/React-19-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue)
+![Vite](https://img.shields.io/badge/Vite-7-purple)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## What It Is
 
-## React Compiler
+KigaliFutureStack transforms Rwanda's official NST2 document into an actionable digital experience. Instead of reading 100+ pages of government strategy, users can explore interactive visualizations of investment opportunities, startup ideas, and transformation targets.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- **Opportunity Atlas** — 12 curated sectors with investment ranges, growth metrics, and market data
+- **Startup Ideas** — Filterable by capital intensity, risk level, and NST2 alignment with side-by-side comparison
+- **NST2 Explorer** — Interactive timeline, three pillars visualization, and progress tracking
+- **Builder's Toolkit** — 90-day roadmap, funding navigator, and go-to-market strategies
+- **Bilingual** — Full English and Kinyarwanda support
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- React 19 + TypeScript 5.9
+- Vite 7.2.4
+- Tailwind CSS 3.4 + shadcn/ui
+- Framer Motion
+- Recharts
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Data Sources
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+All metrics and targets sourced directly from the official Government of Rwanda NST2 2024-2029 document.
+
+## Local Development
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+## Deploy
+
+Built for static hosting. Deploy `dist/` folder to Vercel, Netlify, or GitHub Pages.
+
+---
+
+Developed by Project Future
