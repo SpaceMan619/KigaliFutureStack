@@ -62,7 +62,7 @@ export function FounderQuiz() {
 
     // Submit to Formspree
     try {
-      await fetch('https://formspree.io/f/xnnpjpbe', {
+      await fetch('https://formspree.io/f/xdawnwww', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
