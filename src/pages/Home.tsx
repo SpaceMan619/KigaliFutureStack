@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   TrendingUp, Users, Zap, Globe,
-  ArrowRight, Briefcase, Lightbulb, Map
+  ArrowRight, Briefcase, Lightbulb, Map, Target
 } from 'lucide-react';
 import { useLocale } from '@/contexts/LocaleContext';
 import { useAudience } from '@/contexts/AudienceContext';
@@ -187,6 +187,23 @@ export function Home() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
           >
             <AudienceSwitch size="lg" />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+          >
+            <Link to="/quiz">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-emerald-500/25"
+              >
+                <Target className="w-5 h-5 mr-2" />
+                {locale === 'en' ? "Take the Founder Quiz" : "Fata Ikizamini"}
+              </Button>
+            </Link>
           </motion.div>
 
           <motion.div

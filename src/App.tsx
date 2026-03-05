@@ -8,6 +8,7 @@ import { StartupIdeas } from '@/pages/StartupIdeas';
 import { NST2Explorer } from '@/pages/NST2Explorer';
 import { BuildersToolkit } from '@/pages/BuildersToolkit';
 import { About } from '@/pages/About';
+import { FounderQuiz } from '@/components/quiz/FounderQuiz';
 import './App.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <main className="pt-16">
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/quiz" element={<FounderQuiz />} />
                 <Route path="/opportunity-atlas" element={<OpportunityAtlas />} />
                 <Route path="/startup-ideas" element={<StartupIdeas />} />
                 <Route path="/nst2-explorer" element={<NST2Explorer />} />

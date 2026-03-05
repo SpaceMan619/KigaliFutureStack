@@ -1,0 +1,1 @@
+export { FounderQuiz } from './FounderQuiz';

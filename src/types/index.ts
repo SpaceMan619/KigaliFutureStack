@@ -1,6 +1,9 @@
 export type Locale = 'en' | 'rw';
 export type AudienceMode = 'investor_partner' | 'founder_builder';
 
+// Re-export quiz types
+export * from './quiz';
+
 export interface NST2Metric {
   value: number;
   unit: string;
