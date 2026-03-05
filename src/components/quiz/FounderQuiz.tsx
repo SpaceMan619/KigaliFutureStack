@@ -63,7 +63,7 @@ export function FounderQuiz() {
     // Submit to Google Sheets (replace with your Apps Script URL)
     // Setup guide: ~/Downloads/google-sheets-setup-guide.md
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbxvPNkSHd9X3TLoTxTIH0JACq__B0HMVaNuw-v5sDAH-pmrVtCc5JqtI4H9jJ3SNPUs/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbzoFfi5KNM5WvimJOEfEaoZ7AKB97KLv7ouuBgaKEv-t_HOSdAG63kRzZLcqqX75iqA/exec', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
