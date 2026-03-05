@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
+import {
   ArrowRight, ArrowLeft, CheckCircle, Code, Zap, Target, Rocket, Palette, Heart,
   Loader2
 } from 'lucide-react';
@@ -35,11 +35,11 @@ export function FounderQuiz() {
       if (prev.status !== 'in-progress') return prev;
       const newAnswers = { ...prev.answers, [questionId]: optionId };
       const nextStep = prev.step + 1;
-      
+
       if (nextStep >= quizQuestions.length) {
         return { status: 'in-progress', step: nextStep, answers: newAnswers };
       }
-      
+
       return { status: 'in-progress', step: nextStep, answers: newAnswers };
     });
   }, []);
@@ -53,7 +53,7 @@ export function FounderQuiz() {
 
   const submitQuiz = useCallback(async () => {
     if (state.status !== 'in-progress') return;
-    
+
     setIsSubmitting(true);
     setState({ status: 'submitting', answers: state.answers, email });
 
@@ -81,12 +81,12 @@ export function FounderQuiz() {
     setIsSubmitting(false);
   }, [state, email]);
 
-  const currentQuestion = state.status === 'in-progress' 
-    ? quizQuestions[state.step] 
+  const currentQuestion = state.status === 'in-progress'
+    ? quizQuestions[state.step]
     : null;
-  
-  const progress = state.status === 'in-progress' 
-    ? ((state.step) / quizQuestions.length) * 100 
+
+  const progress = state.status === 'in-progress'
+    ? ((state.step) / quizQuestions.length) * 100
     : 0;
 
   const showEmailCapture = state.status === 'in-progress' && state.step >= quizQuestions.length;
@@ -98,7 +98,7 @@ export function FounderQuiz() {
           {state.status === 'intro' && (
             <IntroScreen key="intro" onStart={startQuiz} locale={locale} />
           )}
-          
+
           {state.status === 'in-progress' && currentQuestion && (
             <QuestionScreen
               key={`q-${currentQuestion.id}`}
@@ -107,9 +107,11 @@ export function FounderQuiz() {
               onSelect={(optionId) => selectAnswer(currentQuestion.id, optionId)}
               onBack={state.step > 0 ? goBack : undefined}
               locale={locale}
+              totalQuestions={quizQuestions.length}
+              currentStep={state.step + 1}
             />
           )}
-          
+
           {showEmailCapture && (
             <EmailCaptureScreen
               key="email"
@@ -121,15 +123,15 @@ export function FounderQuiz() {
               onBack={goBack}
             />
           )}
-          
+
           {state.status === 'submitting' && (
             <SubmittingScreen key="submitting" locale={locale} />
           )}
-          
+
           {state.status === 'complete' && (
-            <ResultsScreen 
-              key="results" 
-              result={state.result} 
+            <ResultsScreen
+              key="results"
+              result={state.result}
               locale={locale}
             />
           )}
@@ -150,31 +152,31 @@ function IntroScreen({ onStart, locale }: { onStart: () => void; locale: string 
       <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-emerald-600/5 flex items-center justify-center mx-auto mb-8">
         <Target className="w-10 h-10 text-emerald-400" />
       </div>
-      
+
       <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
         {locale === 'en' ? "What's Your Founder Archetype?" : "Ni iyihe Archetype ufite?"}
       </h1>
-      
+
       <p className="text-xl text-white/70 mb-8 max-w-lg mx-auto">
-        {locale === 'en' 
+        {locale === 'en'
           ? "Take this 2-minute assessment to discover which of Rwanda's high-growth sectors matches your skills, goals, and situation."
           : "Fata iki kizamini kugirango umenye aho ubuhanga bwawe buhura."
         }
       </p>
-      
+
       <div className="grid grid-cols-2 gap-4 mb-10 max-w-md mx-auto">
         <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-          <p className="text-2xl font-bold text-emerald-400">8</p>
+          <p className="text-2xl font-bold text-emerald-400">20</p>
           <p className="text-sm text-white/60">{locale === 'en' ? 'Questions' : 'Ibibazo'}</p>
         </div>
         <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-          <p className="text-2xl font-bold text-emerald-400">2</p>
+          <p className="text-2xl font-bold text-emerald-400">5</p>
           <p className="text-sm text-white/60">{locale === 'en' ? 'Minutes' : 'Iminota'}</p>
         </div>
       </div>
-      
-      <Button 
-        size="lg" 
+
+      <Button
+        size="lg"
         onClick={onStart}
         className="bg-emerald-500 hover:bg-emerald-600 text-white px-12 py-6 text-lg rounded-xl"
       >
@@ -190,13 +192,17 @@ function QuestionScreen({
   progress, 
   onSelect, 
   onBack,
-  locale 
+  locale,
+  totalQuestions,
+  currentStep
 }: { 
   question: typeof quizQuestions[0];
   progress: number;
   onSelect: (id: string) => void;
   onBack?: () => void;
   locale: string;
+  totalQuestions: number;
+  currentStep: number;
 }) {
   return (
     <motion.div
@@ -207,11 +213,16 @@ function QuestionScreen({
     >
       <div className="mb-8">
         <div className="flex items-center justify-between mb-4">
-          <span className="text-white/60 text-sm">
-            {locale === 'en' ? `Question ${question.id} of 8` : `Ikibazo ${question.id} cya 8`}
-          </span>
+          <div>
+            <span className="text-emerald-400 text-sm font-medium">
+              {locale === 'en' ? `Section ${question.section} of 5` : `Igice ${question.section} cya 5`}
+            </span>
+            <span className="text-white/40 text-sm ml-2">
+              — {locale === 'en' ? question.sectionName : question.sectionNameRw}
+            </span>
+          </div>
           {onBack && (
-            <button 
+            <button
               onClick={onBack}
               className="text-white/60 hover:text-white flex items-center gap-1 text-sm"
             >
@@ -220,13 +231,21 @@ function QuestionScreen({
             </button>
           )}
         </div>
+        
+        <div className="flex items-center justify-between text-sm mb-2">
+          <span className="text-white/60">
+            {locale === 'en' ? `Question ${currentStep} of ${totalQuestions}` : `Ikibazo ${currentStep} cya ${totalQuestions}`}
+          </span>
+          <span className="text-white/40">{Math.round(progress)}%</span>
+        </div>
+        
         <Progress value={progress} className="h-2 bg-white/10" />
       </div>
-      
+
       <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">
         {locale === 'en' ? question.question : question.questionRw}
       </h2>
-      
+
       <div className="space-y-3">
         {question.options.map((option, index) => (
           <motion.button
@@ -250,14 +269,14 @@ function QuestionScreen({
   );
 }
 
-function EmailCaptureScreen({ 
-  email, 
-  setEmail, 
-  onSubmit, 
+function EmailCaptureScreen({
+  email,
+  setEmail,
+  onSubmit,
   isSubmitting,
   locale,
   onBack
-}: { 
+}: {
   email: string;
   setEmail: (e: string) => void;
   onSubmit: () => void;
@@ -275,18 +294,18 @@ function EmailCaptureScreen({
       <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-emerald-600/5 flex items-center justify-center mx-auto mb-8">
         <CheckCircle className="w-10 h-10 text-emerald-400" />
       </div>
-      
+
       <h2 className="text-3xl font-bold text-white mb-4">
         {locale === 'en' ? "Almost Done!" : "Hafi gusoza!"}
       </h2>
-      
+
       <p className="text-white/70 mb-8 max-w-md mx-auto">
-        {locale === 'en' 
+        {locale === 'en'
           ? "Enter your email to get your personalized Founder Profile and startup recommendations."
           : "Shyiramo imeri yawe kugirango ubone igisubizo."
         }
       </p>
-      
+
       <div className="max-w-sm mx-auto space-y-4">
         <Input
           type="email"
@@ -296,9 +315,9 @@ function EmailCaptureScreen({
           className="bg-white/5 border-white/10 text-white placeholder:text-white/30 text-center py-6"
           onKeyDown={(e) => e.key === 'Enter' && email && onSubmit()}
         />
-        
-        <Button 
-          size="lg" 
+
+        <Button
+          size="lg"
           onClick={onSubmit}
           disabled={!email || isSubmitting}
           className="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-6"
@@ -315,9 +334,9 @@ function EmailCaptureScreen({
             </>
           )}
         </Button>
-        
+
         {onBack && (
-          <button 
+          <button
             onClick={onBack}
             className="text-white/60 hover:text-white text-sm"
           >
@@ -325,9 +344,9 @@ function EmailCaptureScreen({
           </button>
         )}
       </div>
-      
+
       <p className="text-white/40 text-xs mt-6 max-w-sm mx-auto">
-        {locale === 'en' 
+        {locale === 'en'
           ? "We'll never spam you. Unsubscribe anytime."
           : "Ntituzohereze spam. Wavana igihe icyo ari cyo."
         }
@@ -357,7 +376,7 @@ function SubmittingScreen({ locale }: { locale: string }) {
 
 function ResultsScreen({ result, locale }: { result: QuizResult; locale: string }) {
   const Icon = iconMap[result.archetype.icon] || Target;
-  
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -369,26 +388,26 @@ function ResultsScreen({ result, locale }: { result: QuizResult; locale: string 
         <div className="w-16 h-16 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-6">
           <Icon className="w-8 h-8 text-emerald-400" />
         </div>
-        
+
         <p className="text-white/60 text-sm uppercase tracking-wider mb-2 text-center">
           {locale === 'en' ? 'Your Founder Archetype' : 'Archetype Yawe'}
         </p>
-        
+
         <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4">
           {locale === 'en' ? result.archetype.name : result.archetype.nameRw}
         </h2>
-        
+
         <p className="text-white/80 text-center max-w-lg mx-auto">
           {locale === 'en' ? result.archetype.description : result.archetype.descriptionRw}
         </p>
       </div>
-      
+
       {/* Top Sectors */}
       <div>
         <h3 className="text-xl font-semibold text-white mb-4">
           {locale === 'en' ? 'Your Top 3 Sector Matches' : 'Imirimo Yawe 3'}
         </h3>
-        
+
         <div className="space-y-3">
           {result.matchedSectors.slice(0, 3).map((sector, index) => (
             <motion.div
@@ -413,7 +432,7 @@ function ResultsScreen({ result, locale }: { result: QuizResult; locale: string 
           ))}
         </div>
       </div>
-      
+
       {/* Strengths & Challenges */}
       <div className="grid md:grid-cols-2 gap-4">
         <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
@@ -429,7 +448,7 @@ function ResultsScreen({ result, locale }: { result: QuizResult; locale: string 
             ))}
           </ul>
         </div>
-        
+
         <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20">
           <h4 className="text-amber-400 font-semibold mb-3">
             {locale === 'en' ? 'Watch Out For' : 'Wirinde'}
@@ -444,31 +463,31 @@ function ResultsScreen({ result, locale }: { result: QuizResult; locale: string 
           </ul>
         </div>
       </div>
-      
+
       {/* CTAs */}
       <div className="flex flex-col sm:flex-row gap-4">
-        <Button 
-          size="lg" 
+        <Button
+          size="lg"
           className="flex-1 bg-emerald-500 hover:bg-emerald-600"
           onClick={() => window.location.href = '/opportunity-atlas'}
         >
           {locale === 'en' ? 'Explore Your Sectors' : 'Shaka Imirimo'}
           <ArrowRight className="w-5 h-5 ml-2" />
         </Button>
-        
-        <Button 
-          size="lg" 
-          variant="outline" 
+
+        <Button
+          size="lg"
+          variant="outline"
           className="flex-1 border-white/20 text-white hover:bg-white/10"
           onClick={() => window.location.href = '/builders-toolkit'}
         >
           {locale === 'en' ? 'Get the Toolkit' : 'Fata Ibikoresho'}
         </Button>
       </div>
-      
+
       <p className="text-white/40 text-sm text-center">
-        {locale === 'en' 
-          ? `Results sent to ${result.email}` 
+        {locale === 'en'
+          ? `Results sent to ${result.email}`
           : `Igicyemezo cyoherejwe kuri ${result.email}`
         }
       </p>
@@ -479,7 +498,7 @@ function ResultsScreen({ result, locale }: { result: QuizResult; locale: string 
 function calculateResults(answers: Record<number, string>, email: string): QuizResult {
   // Calculate archetype scores
   const scores: Record<string, number> = {};
-  
+
   quizQuestions.forEach(q => {
     const answerId = answers[q.id];
     const option = q.options.find(o => o.id === answerId);
@@ -489,21 +508,21 @@ function calculateResults(answers: Record<number, string>, email: string): QuizR
       });
     }
   });
-  
+
   // Get top archetype
   const topArchetypeId = Object.entries(scores).sort((a, b) => b[1] - a[1])[0]?.[0];
   const archetype = archetypes.find(a => a.id === topArchetypeId) || archetypes[0];
-  
+
   // Calculate sector matches
   const sectorScores: Record<string, { score: number; why: string; whyRw: string }> = {};
-  
+
   Object.entries(sectorMatches).forEach(([sectorId, matches]) => {
     const match = matches[archetype.id];
     if (match) {
       sectorScores[sectorId] = match;
     }
   });
-  
+
   // Get top 3 sectors
   const matchedSectors = Object.entries(sectorScores)
     .sort((a, b) => b[1].score - a[1].score)
@@ -521,7 +540,7 @@ function calculateResults(answers: Record<number, string>, email: string): QuizR
         manufacturing: { en: 'Manufacturing', rw: 'Ubucuruzi' },
         'construction-tech': { en: 'Construction Tech', rw: 'Ikoranabuhanga ry\'Ubwubatsi' }
       };
-      
+
       return {
         id,
         name: sectorNames[id]?.en || id,
@@ -531,7 +550,7 @@ function calculateResults(answers: Record<number, string>, email: string): QuizR
         whyRw: data.whyRw
       };
     });
-  
+
   return {
     archetype,
     matchedSectors,

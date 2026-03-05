@@ -1,94 +1,182 @@
 import type { QuizQuestion, Archetype } from '@/types/quiz';
 
 export const quizQuestions: QuizQuestion[] = [
+  // Section 1: You (4 questions)
   {
     id: 1,
     question: "Where are you right now?",
     questionRw: "Uri hehe ubu?",
+    section: 1,
+    sectionName: "You",
+    sectionNameRw: "Wowe",
     options: [
       { 
         id: "student", 
         label: "University student (undergraduate)", 
         labelRw: "Umuhanga wa kaminuza (undergraduate)",
-        scores: { scrappy: 2, hustler: 1 },
-        tags: ["low-capital", "flexible-time"]
+        scores: { scrappy: 2, creative: 1 },
+        tags: ["low-capital", "flexible-time", "campus-resources"]
       },
       { 
         id: "recent-grad", 
         label: "Recent graduate (< 2 years out)", 
         labelRw: "Urwaga kaminuza (< imyaka 2)",
         scores: { technical: 1, hustler: 2, expert: 1 },
-        tags: ["medium-capital", "job-transition"]
+        tags: ["medium-capital", "job-transition", "needs-income"]
       },
       { 
         id: "professional", 
         label: "Working professional", 
         labelRw: "Umukozi",
         scores: { expert: 3, technical: 2 },
-        tags: ["higher-capital", "industry-experience"]
+        tags: ["higher-capital", "industry-experience", "part-time"]
       },
       { 
         id: "existing-founder", 
         label: "Already running something small", 
         labelRw: "Ufite ubucuruzi boroheje",
         scores: { hustler: 3, scrappy: 2 },
-        tags: ["has-revenue", "proven"]
+        tags: ["has-revenue", "proven", "growth-ready"]
       }
     ]
   },
   {
     id: 2,
+    question: "What's your highest level of education?",
+    questionRw: "Ni iyihe kipe y'amashuri yawe yisumbuye?",
+    section: 1,
+    sectionName: "You",
+    sectionNameRw: "Wowe",
+    options: [
+      { 
+        id: "high-school", 
+        label: "High school / A-levels", 
+        labelRw: "Amashuri yisumbuye",
+        scores: { scrappy: 2, creative: 1 },
+        tags: ["young", "needs-training"]
+      },
+      { 
+        id: "tvet", 
+        label: "Vocational / TVET", 
+        labelRw: "Imyuga (TVET)",
+        scores: { expert: 2, technical: 1 },
+        tags: ["hands-on", "technical-skills"]
+      },
+      { 
+        id: "undergrad", 
+        label: "University undergraduate", 
+        labelRw: "Kaminuza (undergraduate)",
+        scores: { technical: 2, creative: 1 },
+        tags: ["student", "campus-access"]
+      },
+      { 
+        id: "graduate", 
+        label: "University graduate / Masters", 
+        labelRw: "Kaminuza (graduate/Masters)",
+        scores: { expert: 3, technical: 2 },
+        tags: ["educated", "network"]
+      }
+    ]
+  },
+  {
+    id: 3,
+    question: "Where in Rwanda are you based?",
+    questionRw: "Uri mu kihe gice cya Rwanda?",
+    section: 1,
+    sectionName: "You",
+    sectionNameRw: "Wowe",
+    options: [
+      { 
+        id: "kigali-center", 
+        label: "Kigali (City center)", 
+        labelRw: "Kigali (downtown)",
+        scores: { hustler: 2, creative: 1 },
+        tags: ["kigali", "high-rent", "network-access"]
+      },
+      { 
+        id: "kigali-outskirts", 
+        label: "Kigali outskirts", 
+        labelRw: "Kigali (imbuga)",
+        scores: { scrappy: 2, technical: 1 },
+        tags: ["kigali", "lower-rent", "growing"]
+      },
+      { 
+        id: "secondary-city", 
+        label: "Secondary city (Musanze, Rubavu, etc.)", 
+        labelRw: "Imijyi yindi",
+        scores: { expert: 2, impact: 1 },
+        tags: ["secondary-city", "lower-cost", "niche-markets"]
+      },
+      { 
+        id: "rural", 
+        label: "Rural area", 
+        labelRw: "Icyaro",
+        scores: { expert: 3, impact: 2 },
+        tags: ["rural", "agriculture", "community"]
+      }
+    ]
+  },
+  {
+    id: 4,
     question: "What do you bring to the table? (Pick your strongest)",
     questionRw: "Ni iki wazanira ku meza? (Hitamo irikomeye)",
+    section: 1,
+    sectionName: "You",
+    sectionNameRw: "Wowe",
     options: [
       { 
         id: "tech", 
         label: "I can code / build tech products", 
         labelRw: "Nshobora gushyira porogaramu / kubaka ibikoresho",
         scores: { technical: 4 },
-        tags: ["tech-skills", "builder"]
+        tags: ["tech-skills", "builder", "scalable"]
       },
       { 
         id: "sales", 
         label: "I can sell / convince people", 
         labelRw: "Nshobora kugurisha / guhitamo abantu",
         scores: { hustler: 4 },
-        tags: ["sales-skills", "growth"]
+        tags: ["sales-skills", "growth", "revenue"]
       },
       { 
         id: "domain", 
         label: "I know a specific industry deeply", 
         labelRw: "Nzi ubucuruzi runaka neza",
         scores: { expert: 4 },
-        tags: ["domain-knowledge", "insider"]
+        tags: ["domain-knowledge", "insider", "problem-aware"]
       },
       { 
         id: "design", 
         label: "I can design / create content", 
         labelRw: "Nshobora gushushanya / gukora ibikubiye",
         scores: { creative: 3, technical: 1 },
-        tags: ["design-skills", "content"]
+        tags: ["design-skills", "content", "brand"]
       },
       { 
         id: "operations", 
         label: "I can raise money / manage operations", 
         labelRw: "Nshobora gutera amafaranga / gucunga",
         scores: { hustler: 2, expert: 2 },
-        tags: ["ops-skills", "funding"]
+        tags: ["ops-skills", "funding", "execution"]
       }
     ]
   },
+
+  // Section 2: Resources (4 questions)
   {
-    id: 3,
+    id: 5,
     question: "How much can you personally invest to start?",
     questionRw: "Ni angahe amafaranga washobora gushora?",
+    section: 2,
+    sectionName: "Resources",
+    sectionNameRw: "Ibyawe",
     options: [
       { 
         id: "under-100", 
         label: "Under $100 (basically ramen money)", 
         labelRw: "Hasi ya $100",
         scores: { scrappy: 4, creative: 2 },
-        tags: ["micro-capital", "service-based"]
+        tags: ["micro-capital", "service-based", "side-hustle"]
       },
       { 
         id: "100-1k", 
@@ -114,16 +202,19 @@ export const quizQuestions: QuizQuestion[] = [
     ]
   },
   {
-    id: 4,
+    id: 6,
     question: "How stable does your income need to be?",
     questionRw: "Amafaranga yawe agomba kuba yizewe gute?",
+    section: 2,
+    sectionName: "Resources",
+    sectionNameRw: "Ibyawe",
     options: [
       { 
         id: "3-months", 
         label: "I need something paying within 3 months", 
         labelRw: "Nkeneye amafaranga mu mezi 3",
         scores: { scrappy: 3, hustler: 2 },
-        tags: ["immediate-revenue", "services"]
+        tags: ["immediate-revenue", "services", "urgent"]
       },
       { 
         id: "6-months", 
@@ -149,72 +240,166 @@ export const quizQuestions: QuizQuestion[] = [
     ]
   },
   {
-    id: 5,
-    question: "How fast do you want to move?",
-    questionRw: "Urashaka kwihuta gute?",
-    options: [
-      { 
-        id: "this-semester", 
-        label: "I want to start something THIS semester", 
-        labelRw: "Nshaka gutangira muri iki gihe cya kaminuza",
-        scores: { scrappy: 4, hustler: 3 },
-        tags: ["immediate", "experiment"]
-      },
-      { 
-        id: "wait-right", 
-        label: "I can wait for the right opportunity", 
-        labelRw: "Nshobora gutegereza amahirwe yiza",
-        scores: { expert: 2, technical: 1 },
-        tags: ["patient", "strategic"]
-      },
-      { 
-        id: "just-exploring", 
-        label: "I'm just exploring, no rush", 
-        labelRw: "Ndashaka gusa, nta mpungenge",
-        scores: { creative: 2 },
-        tags: ["learning", "low-commitment"]
-      }
-    ]
-  },
-  {
-    id: 6,
-    question: "Do you have a co-founder?",
-    questionRw: "Ufite uwo mufatanya?",
-    options: [
-      { 
-        id: "has-cofounder", 
-        label: "Yes, we have complementary skills", 
-        labelRw: "Yego, dufite ubuhanga butandukanye",
-        scores: { technical: 2, hustler: 2, expert: 2 },
-        tags: ["team-ready", "can-build-fast"]
-      },
-      { 
-        id: "interested", 
-        label: "I have someone interested but not committed", 
-        labelRw: "Nafite uwishimiye ariko ataremeza",
-        scores: { hustler: 1 },
-        tags: ["potential-team", "needs-convincing"]
-      },
-      { 
-        id: "solo", 
-        label: "I'm solo right now", 
-        labelRw: "Ndi wenyine ubu",
-        scores: { scrappy: 2, expert: 1 },
-        tags: ["solo-founder", "needs-co-founder"]
-      },
-      { 
-        id: "looking", 
-        label: "I'm looking for a co-founder", 
-        labelRw: "Nshaka uwifatanya",
-        scores: { technical: 1, hustler: 1 },
-        tags: ["seeking-team", "networking"]
-      }
-    ]
-  },
-  {
     id: 7,
+    question: "Do you have access to people who can help?",
+    questionRw: "Ufite abantu bafasha?",
+    section: 2,
+    sectionName: "Resources",
+    sectionNameRw: "Ibyawe",
+    options: [
+      { 
+        id: "family-business", 
+        label: "Family with business experience", 
+        labelRw: "Umuryango ufite uburambe bw'ubucuruzi",
+        scores: { hustler: 2, expert: 1 },
+        tags: ["family-support", "mentorship"]
+      },
+      { 
+        id: "alumni-network", 
+        label: "University alumni network", 
+        labelRw: "Abanyeshuri ba kaminuza basanzwe",
+        scores: { technical: 2, creative: 1 },
+        tags: ["campus-network", "peer-support"]
+      },
+      { 
+        id: "work-contacts", 
+        label: "Professional contacts from work", 
+        labelRw: "Abakozi baziwe",
+        scores: { expert: 3, hustler: 2 },
+        tags: ["industry-network", "customers"]
+      },
+      { 
+        id: "scratch", 
+        label: "Mostly starting from scratch", 
+        labelRw: "Ntafite benshi",
+        scores: { scrappy: 3, creative: 1 },
+        tags: ["solo", "self-reliant", "needs-community"]
+      }
+    ]
+  },
+  {
+    id: 8,
+    question: "How much time can you dedicate per week?",
+    questionRw: "Ni amasaha angahe ushobora gukora mu cyumweru?",
+    section: 2,
+    sectionName: "Resources",
+    sectionNameRw: "Ibyawe",
+    options: [
+      { 
+        id: "full-time", 
+        label: "Full-time (40+ hours)", 
+        labelRw: "Igihe cyose (amasaha 40+)",
+        scores: { technical: 3, hustler: 2 },
+        tags: ["dedicated", "fast-build"]
+      },
+      { 
+        id: "part-time", 
+        label: "Part-time (20-40 hours)", 
+        labelRw: "Igihe gito (amasaha 20-40)",
+        scores: { technical: 2, creative: 1 },
+        tags: ["balanced", "sustainable"]
+      },
+      { 
+        id: "side-project", 
+        label: "Side project (10-20 hours)", 
+        labelRw: "Ikindi gikorwa (amasaha 10-20)",
+        scores: { creative: 2, scrappy: 1 },
+        tags: ["side-hustle", "slow-build"]
+      },
+      { 
+        id: "spare-moments", 
+        label: "Spare moments (< 10 hours)", 
+        labelRw: "Igihe gito (hasi ya 10)",
+        scores: { scrappy: 2 },
+        tags: ["limited", "micro-project"]
+      }
+    ]
+  },
+
+  // Section 3: Psychology (4 questions)
+  {
+    id: 9,
+    question: "How do you feel about risk?",
+    questionRw: "Urameze ute ku byo kwishyira mu kaga?",
+    section: 3,
+    sectionName: "Psychology",
+    sectionNameRw: "Ubwenge",
+    options: [
+      { 
+        id: "avoid-risk", 
+        label: "I avoid risk whenever possible", 
+        labelRw: "Nkirinda kaga",
+        scores: { expert: 2, scrappy: 1 },
+        tags: ["risk-averse", "cautious"]
+      },
+      { 
+        id: "calculated", 
+        label: "I take calculated risks", 
+        labelRw: "Nfata ibyo nigeze gusuzuma",
+        scores: { technical: 3, expert: 2 },
+        tags: ["analytical", "strategic"]
+      },
+      { 
+        id: "comfortable", 
+        label: "I'm comfortable with uncertainty", 
+        labelRw: "Nishimira kutazi",
+        scores: { hustler: 3, creative: 2 },
+        tags: ["adaptable", "entrepreneurial"]
+      },
+      { 
+        id: "thrive-chaos", 
+        label: "I thrive in chaos", 
+        labelRw: "Ndatsinza mu makuba",
+        scores: { hustler: 4, creative: 2 },
+        tags: ["high-risk", "pivot-friendly"]
+      }
+    ]
+  },
+  {
+    id: 10,
+    question: "What happens when you fail?",
+    questionRw: "Ni iki kibaho igihe utatsinze?",
+    section: 3,
+    sectionName: "Psychology",
+    sectionNameRw: "Ubwenge",
+    options: [
+      { 
+        id: "analyze-retry", 
+        label: "I analyze what went wrong and try again", 
+        labelRw: "Nsuzuma nkongera",
+        scores: { technical: 3, expert: 2 },
+        tags: ["resilient", "learner"]
+      },
+      { 
+        id: "break-reassess", 
+        label: "I take a break, then reassess", 
+        labelRw: "Ndahumeka nkongera",
+        scores: { creative: 2, expert: 1 },
+        tags: ["reflective", "adaptive"]
+      },
+      { 
+        id: "move-on", 
+        label: "I usually move on to something else", 
+        labelRw: "Ngenda ahandi",
+        scores: { creative: 3, hustler: 2 },
+        tags: ["pivoter", "opportunistic"]
+      },
+      { 
+        id: "confidence-hit", 
+        label: "Failure really affects my confidence", 
+        labelRw: "Kutatsinda kunyica imbaraga",
+        scores: { expert: 1 },
+        tags: ["needs-support", "early-validation"]
+      }
+    ]
+  },
+  {
+    id: 11,
     question: "What's driving you? (Be honest)",
     questionRw: "Ni iki kukurikirana? (Mwitondere)",
+    section: 3,
+    sectionName: "Psychology",
+    sectionNameRw: "Ubwenge",
     options: [
       { 
         id: "money", 
@@ -227,7 +412,7 @@ export const quizQuestions: QuizQuestion[] = [
         id: "impact", 
         label: "I want to solve a real problem I see in Rwanda", 
         labelRw: "Ndashaka gukora ikibazo nkibona mu Rwanda",
-        scores: { expert: 3, creative: 1 },
+        scores: { expert: 3, creative: 1, impact: 3 },
         tags: ["impact-driven", "mission"]
       },
       { 
@@ -247,15 +432,58 @@ export const quizQuestions: QuizQuestion[] = [
     ]
   },
   {
-    id: 8,
+    id: 12,
+    question: "How do you feel about competition?",
+    questionRw: "Urameze ute ku marushanwa?",
+    section: 3,
+    sectionName: "Psychology",
+    sectionNameRw: "Ubwenge",
+    options: [
+      { 
+        id: "few-competitors", 
+        label: "I prefer markets with few competitors", 
+        labelRw: "Nshaka isoko ridafite abagurisha benshi",
+        scores: { expert: 2, scrappy: 1 },
+        tags: ["niche", "blue-ocean"]
+      },
+      { 
+        id: "demand-signal", 
+        label: "Competition means there's demand", 
+        labelRw: "Marushanwa bisobanura ko hari abagura",
+        scores: { hustler: 3, technical: 1 },
+        tags: ["market-validator", "fast-follower"]
+      },
+      { 
+        id: "crush", 
+        label: "I want to crush my competitors", 
+        labelRw: "Ndashaka gutsinda abandi",
+        scores: { hustler: 4, technical: 2 },
+        tags: ["competitive", "aggressive"]
+      },
+      { 
+        id: "collaborate", 
+        label: "I'm happy to collaborate with competitors", 
+        labelRw: "Nshimira gukorana n'abandi",
+        scores: { expert: 2, impact: 2 },
+        tags: ["ecosystem-builder", "cooperative"]
+      }
+    ]
+  },
+
+  // Section 4: Market Fit (4 questions)
+  {
+    id: 13,
     question: "Which areas do you actually care about?",
     questionRw: "Ni ipi sekta wishimiye?",
+    section: 4,
+    sectionName: "Market Fit",
+    sectionNameRw: "Isoko",
     options: [
       { 
         id: "agriculture", 
         label: "Agriculture / helping farmers", 
         labelRw: "Ubuhinzi / gufasha abahinzi",
-        scores: { expert: 2 },
+        scores: { expert: 2, impact: 1 },
         tags: ["agriculture", "rural-impact"]
       },
       { 
@@ -290,7 +518,7 @@ export const quizQuestions: QuizQuestion[] = [
         id: "environment", 
         label: "Environment / climate solutions", 
         labelRw: "Ibidukikije / ibisubizo",
-        scores: { expert: 1 },
+        scores: { expert: 1, impact: 2 },
         tags: ["climate-tech", "green"]
       },
       { 
@@ -299,6 +527,274 @@ export const quizQuestions: QuizQuestion[] = [
         labelRw: "Nta cyo nshaka cyane — nshaka ibikora",
         scores: { hustler: 2, scrappy: 1 },
         tags: ["opportunistic", "flexible"]
+      }
+    ]
+  },
+  {
+    id: 14,
+    question: "Do you have a specific problem you want to solve?",
+    questionRw: "Ufite ikibazo cyihariye ushaka gukora?",
+    section: 4,
+    sectionName: "Market Fit",
+    sectionNameRw: "Isoko",
+    options: [
+      { 
+        id: "personal-experience", 
+        label: "Yes, I've experienced it personally", 
+        labelRw: "Yego, nigeze kubona",
+        scores: { expert: 3, creative: 1 },
+        tags: ["problem-found", "authentic"]
+      },
+      { 
+        id: "community-observed", 
+        label: "Yes, I've observed it in my community", 
+        labelRw: "Yego, nigeze kubona mu muryango",
+        scores: { expert: 2, impact: 2 },
+        tags: ["community-insight", "local-knowledge"]
+      },
+      { 
+        id: "need-validation", 
+        label: "I have some ideas but need validation", 
+        labelRw: "Nfite ibitekerezo ariko ngomba gusuzuma",
+        scores: { technical: 2, hustler: 1 },
+        tags: ["idea-stage", "needs-research"]
+      },
+      { 
+        id: "looking", 
+        label: "No, I'm looking for problems to solve", 
+        labelRw: "Oya, nshaka ibibazo",
+        scores: { hustler: 2, scrappy: 2 },
+        tags: ["opportunity-seeker", "flexible"]
+      }
+    ]
+  },
+  {
+    id: 15,
+    question: "How easy is it for you to reach potential customers?",
+    questionRw: "Kugerana abakiriya bihora bite?",
+    section: 4,
+    sectionName: "Market Fit",
+    sectionNameRw: "Isoko",
+    options: [
+      { 
+        id: "know-first-10", 
+        label: "I already know my first 10 customers", 
+        labelRw: "Nzi ba mbere bantu 10",
+        scores: { hustler: 3, expert: 2 },
+        tags: ["ready-to-sell", "validated"]
+      },
+      { 
+        id: "have-channels", 
+        label: "I have channels to reach them (social media, community, etc.)", 
+        labelRw: "Nfite uburyo (imbugankoranyambaga, etc.)",
+        scores: { hustler: 2, creative: 2 },
+        tags: ["reach", "marketing-ready"]
+      },
+      { 
+        id: "need-marketing", 
+        label: "I'll need to figure out marketing", 
+        labelRw: "Nzamenya uburyo bwo kugera ku bo",
+        scores: { technical: 1, scrappy: 1 },
+        tags: ["needs-growth", "experiment"]
+      },
+      { 
+        id: "marketing-challenge", 
+        label: "Marketing feels like my biggest challenge", 
+        labelRw: "Kugera ku bo ni ikibazo cyikomeye",
+        scores: { technical: 1 },
+        tags: ["needs-hustler", "technical-only"]
+      }
+    ]
+  },
+  {
+    id: 16,
+    question: "Who is your target customer?",
+    questionRw: "Ni nde uwo mushaka kugurisha?",
+    section: 4,
+    sectionName: "Market Fit",
+    sectionNameRw: "Isoko",
+    options: [
+      { 
+        id: "rwandans", 
+        label: "Only Rwandans", 
+        labelRw: "Abanyarwanda gusa",
+        scores: { expert: 2, scrappy: 1 },
+        tags: ["local", "kinyarwanda"]
+      },
+      { 
+        id: "east-africa", 
+        label: "East Africans", 
+        labelRw: "Abanyafurika y'Iburasirazuba",
+        scores: { hustler: 2, expert: 1 },
+        tags: ["regional", "expansion"]
+      },
+      { 
+        id: "africa", 
+        label: "Africa-wide", 
+        labelRw: "Afurika yose",
+        scores: { hustler: 3, technical: 2 },
+        tags: ["pan-african", "scalable"]
+      },
+      { 
+        id: "global", 
+        label: "Global / International", 
+        labelRw: "Isi yose",
+        scores: { technical: 3, creative: 2 },
+        tags: ["global", "remote"]
+      }
+    ]
+  },
+
+  // Section 5: Execution (4 questions)
+  {
+    id: 17,
+    question: "What have you built or started before?",
+    questionRw: "Wubatse iki cyangwa watangiye mbere?",
+    section: 5,
+    sectionName: "Execution",
+    sectionNameRw: "Gukora",
+    options: [
+      { 
+        id: "nothing", 
+        label: "Nothing yet — this would be my first", 
+        labelRw: "Nta na kimwe — ibya mbere",
+        scores: { scrappy: 2, creative: 1 },
+        tags: ["first-timer", "needs-validation"]
+      },
+      { 
+        id: "side-projects", 
+        label: "Side projects / experiments", 
+        labelRw: "Ibindi gikorwa / ibigeragezo",
+        scores: { creative: 2, technical: 1 },
+        tags: ["tinkerer", "learner"]
+      },
+      { 
+        id: "small-business", 
+        label: "Small business or freelance work", 
+        labelRw: "Ubucuruzi boroheje cyangwa akazi kanjye",
+        scores: { scrappy: 3, hustler: 2 },
+        tags: ["experienced", "revenue"]
+      },
+      { 
+        id: "startup-before", 
+        label: "I've tried a startup before", 
+        labelRw: "Nigeze kugerageza",
+        scores: { hustler: 3, technical: 2 },
+        tags: ["seasoned", "learned"]
+      }
+    ]
+  },
+  {
+    id: 18,
+    question: "Do you have a co-founder or team?",
+    questionRw: "Ufite uwo mufatanya?",
+    section: 5,
+    sectionName: "Execution",
+    sectionNameRw: "Gukora",
+    options: [
+      { 
+        id: "has-cofounder", 
+        label: "Yes, we have complementary skills", 
+        labelRw: "Yego, dufite ubuhanga butandukanye",
+        scores: { technical: 2, hustler: 2, expert: 2 },
+        tags: ["team-ready", "can-build-fast"]
+      },
+      { 
+        id: "interested", 
+        label: "I have someone interested but not committed", 
+        labelRw: "Nafite uwishimiye ariko ataremeza",
+        scores: { hustler: 1 },
+        tags: ["potential-team", "needs-convincing"]
+      },
+      { 
+        id: "solo", 
+        label: "I'm solo right now", 
+        labelRw: "Ndi wenyine ubu",
+        scores: { scrappy: 2, expert: 1 },
+        tags: ["solo-founder", "needs-co-founder"]
+      },
+      { 
+        id: "looking", 
+        label: "I'm actively looking for a co-founder", 
+        labelRw: "Nshaka uwifatanya",
+        scores: { technical: 1, hustler: 1 },
+        tags: ["seeking-team", "networking"]
+      }
+    ]
+  },
+  {
+    id: 19,
+    question: "How do you learn best?",
+    questionRw: "Ubigana gute byoroshye?",
+    section: 5,
+    sectionName: "Execution",
+    sectionNameRw: "Gukora",
+    options: [
+      { 
+        id: "reading", 
+        label: "Reading books / articles", 
+        labelRw: "Gusoma ibitabo / inyandiko",
+        scores: { technical: 2, expert: 2 },
+        tags: ["researcher", "self-directed"]
+      },
+      { 
+        id: "videos", 
+        label: "Watching videos / tutorials", 
+        labelRw: "Kubona amashusho / inyigisho",
+        scores: { creative: 2, technical: 1 },
+        tags: ["visual-learner", "youtube"]
+      },
+      { 
+        id: "doing", 
+        label: "Doing it myself / trial and error", 
+        labelRw: "Gukora / gugerageza",
+        scores: { scrappy: 3, hustler: 2 },
+        tags: ["hands-on", "builder"]
+      },
+      { 
+        id: "mentors", 
+        label: "Learning from mentors / peers", 
+        labelRw: "Kwigira ku banyamwigire",
+        scores: { expert: 2, hustler: 1 },
+        tags: ["community-learner", "networked"]
+      }
+    ]
+  },
+  {
+    id: 20,
+    question: "How serious are you about starting something?",
+    questionRw: "Ufite impungenge ki zo gutangira ikintu?",
+    section: 5,
+    sectionName: "Execution",
+    sectionNameRw: "Gukora",
+    options: [
+      { 
+        id: "exploring", 
+        label: "Just exploring ideas right now", 
+        labelRw: "Ndashaka gusa ubu",
+        scores: { creative: 2 },
+        tags: ["curious", "low-commitment"]
+      },
+      { 
+        id: "3-months", 
+        label: "I want to start within 3 months", 
+        labelRw: "Ndashaka gutangira mu mezi 3",
+        scores: { scrappy: 2, hustler: 1 },
+        tags: ["planning", "short-timeline"]
+      },
+      { 
+        id: "immediately", 
+        label: "I'm ready to start immediately", 
+        labelRw: "Nditeguye gutangira nonaha",
+        scores: { hustler: 3, technical: 2, scrappy: 2 },
+        tags: ["ready", "action"]
+      },
+      { 
+        id: "started", 
+        label: "I've already started — just need direction", 
+        labelRw: "Ndatangiye — nkeneye inzira",
+        scores: { hustler: 2, expert: 2 },
+        tags: ["in-progress", "needs-strategy"]
       }
     ]
   }
