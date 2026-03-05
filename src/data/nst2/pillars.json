@@ -1,0 +1,184 @@
+{
+  "pillars": [
+    {
+      "id": "economic",
+      "name": "Economic Transformation",
+      "nameRw": "Impinduka z'Ubukungu",
+      "color": "#10B981",
+      "icon": "TrendingUp",
+      "description": "Advancing competitiveness, integration, agriculture for wealth creation, and urbanization",
+      "descriptionRw": "Guteza imbere ubushobozi, uhuza, ubuhinzi bw'ubukungu, n'imijyi",
+      "priorities": [
+        {
+          "id": "agriculture",
+          "name": "Climate-resilient Agri-food Systems",
+          "nameRw": "Sisitemu z'Ibihingwa Zihanganira Ihindagurika ry'Ikirere",
+          "target": "6% annual growth in agriculture",
+          "targetRw": "Kukura kwa 6% buri mwaka mu buhinzi"
+        },
+        {
+          "id": "industry",
+          "name": "Industrial Development & Export Promotion",
+          "nameRw": "Iterambere ry'Ubucuruzi n'Iterambere ry'Ibicuruzwa",
+          "target": "USD 7.3B exports by 2029",
+          "targetRw": "Ibicuruzwa bya USD 7.3B mu 2029"
+        },
+        {
+          "id": "tourism",
+          "name": "High-end Eco-friendly Tourism",
+          "nameRw": "Ubukerarugendo bw'Icyambu",
+          "target": "USD 1.1B tourism revenue",
+          "targetRw": "Amafaranga ya USD 1.1B yo mubukerarugendo"
+        },
+        {
+          "id": "energy",
+          "name": "Renewable Energy Transition",
+          "nameRw": "Guhindura Imirasire y'Amashanyarazi",
+          "target": "100% electricity access, 60% renewable",
+          "targetRw": "Kugera kuri 100% amashanyarazi, 60% asubirwamo"
+        },
+        {
+          "id": "water",
+          "name": "Water Access for Development",
+          "nameRw": "Amazi yo Gukoresha mu Iterambere",
+          "target": "Universal water access in all villages",
+          "targetRw": "Amazi yose mu midugudu yose"
+        },
+        {
+          "id": "transport",
+          "name": "Enhanced Transport Connectivity",
+          "nameRw": "Guhuzanya Imigenzo",
+          "target": "300km national roads, 500km feeder roads",
+          "targetRw": "Umuhanda wa km 300, umuhanda wa km 500"
+        },
+        {
+          "id": "urbanization",
+          "name": "Urbanization & Settlements",
+          "nameRw": "Imijyi n'Imiturire",
+          "target": "Densified, livable urban neighborhoods",
+          "targetRw": "Imijyi myiza kandi myiza"
+        },
+        {
+          "id": "digital",
+          "name": "Digital Transformation",
+          "nameRw": "Guhindura Ikoranabuhanga",
+          "target": "100% digital literacy, 1M coders trained",
+          "targetRw": "Ubwenge bwa 100% mu ikoranabuhanga"
+        },
+        {
+          "id": "financial",
+          "name": "Resilient Financial Sector",
+          "nameRw": "Sekiteri y'Imari Ihanganye",
+          "target": "25.9% national savings rate",
+          "targetRw": "Kuzigama kwa 25.9%"
+        },
+        {
+          "id": "climate",
+          "name": "Climate Resilience & Environment",
+          "nameRw": "Ihanganira Ikirere n'Ibidukikije",
+          "target": "38% reduction in greenhouse gas emissions",
+          "targetRw": "Kugabanya ibyuka bya 38%"
+        },
+        {
+          "id": "jobs",
+          "name": "Productive & Decent Jobs",
+          "nameRw": "Imirimo Izigamiye",
+          "target": "1.25 million jobs created",
+          "targetRw": "Imirimo 1,250,000 yaremwe"
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "name": "Social Transformation",
+      "nameRw": "Impinduka mu Muryango",
+      "color": "#3B82F6",
+      "icon": "Users",
+      "description": "Ensuring high standards of living and productive workforce for all Rwandans",
+      "descriptionRw": "Guhagarika ibyiza by'ubuzima n'abakozi b'abanyarwanda bose",
+      "priorities": [
+        {
+          "id": "education",
+          "name": "Quality & Market-relevant Education",
+          "nameRw": "Uburezi bw'Ubwiza n'Ubucuruzi",
+          "target": "65% pre-primary enrollment, 60% TVET enrollment",
+          "targetRw": "65% bafatanyije, 60% TVET"
+        },
+        {
+          "id": "health",
+          "name": "Quality Health & Reduced Stunting",
+          "nameRw": "Ubuziza bw'Ubuzima n'Ukugabanya Imirire",
+          "target": "Stunting reduced from 33% to 15%",
+          "targetRw": "Kugabanya imirire kuva kuri 33% kugera kuri 15%"
+        },
+        {
+          "id": "wash",
+          "name": "Sanitation & Hygiene Services",
+          "nameRw": "Isuku n'Imisatsi",
+          "target": "Scaled up WASH for productive uses",
+          "targetRw": "WASH yagutse"
+        },
+        {
+          "id": "poverty",
+          "name": "Graduation from Poverty",
+          "nameRw": "Gukura mu Bukene",
+          "target": "Enhanced social safety nets coverage",
+          "targetRw": "Uruhare rw'imiryango mu bukene"
+        }
+      ]
+    },
+    {
+      "id": "governance",
+      "name": "Transformational Governance",
+      "nameRw": "Ubuyobozi bw'Impinduka",
+      "color": "#8B5CF6",
+      "icon": "Shield",
+      "description": "Strengthening rule of law, governance, national unity and resilience",
+      "descriptionRw": "Gukomeza amategeko, ubuyobozi, ubumwe bw'abanyarwanda",
+      "priorities": [
+        {
+          "id": "ruleOfLaw",
+          "name": "Enhanced Rule of Law",
+          "nameRw": "Gukomeza Amategeko",
+          "target": "Case backlogs reduced by half",
+          "targetRw": "Kugabanya ibibazo by'amategeko"
+        },
+        {
+          "id": "serviceDelivery",
+          "name": "Service Delivery & Citizen Participation",
+          "nameRw": "Gutanga Serivisi no Gufatanya n'Abaturage",
+          "target": "90%+ citizen satisfaction with services",
+          "targetRw": "90%+ abaturage bishimiye serivisi"
+        },
+        {
+          "id": "pfm",
+          "name": "PFM Transparency & Accountability",
+          "nameRw": "Imparirwakumenya n'Intego mu Gucunga Imari",
+          "target": "Enhanced compliance with IPSAS",
+          "targetRw": "Gukurikiza IPSAS"
+        },
+        {
+          "id": "cooperation",
+          "name": "Enhanced International Cooperation",
+          "nameRw": "Gukomeza Ubufatanye mpuzamahanga",
+          "target": "Economic diplomacy and AfCFTA leverage",
+          "targetRw": "Ububanyi bw'ubukungu n'AfCFTA"
+        },
+        {
+          "id": "unity",
+          "name": "National Unity, Resilience & Values",
+          "nameRw": "Ubumwe, Ihanganwa n'Indangagaciro",
+          "target": "Strengthened Ndi Umunyarwanda and Itorero",
+          "targetRw": "Gukomeza Ndi Umunyarwanda"
+        },
+        {
+          "id": "security",
+          "name": "Sustained Peace & Security",
+          "nameRw": "Amahoro n'Umutekano",
+          "target": "90%+ confidence in safety and security",
+          "targetRw": "90%+ umutekano"
+        }
+      ]
+    }
+  ]
+}

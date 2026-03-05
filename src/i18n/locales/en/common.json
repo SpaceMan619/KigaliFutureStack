@@ -1,0 +1,57 @@
+{
+  "app": {
+    "name": "KigaliFutureStack",
+    "tagline": "Discover Rwanda's Transformation Opportunities",
+    "description": "Your gateway to NST2-aligned investment and startup opportunities in Rwanda"
+  },
+  "nav": {
+    "home": "Home",
+    "opportunityAtlas": "Opportunity Atlas",
+    "startupIdeas": "Startup Ideas",
+    "nst2Explorer": "NST2 Explorer",
+    "buildersToolkit": "Builder's Toolkit",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "audience": {
+    "investorPartner": "I'm an Investor/Partner",
+    "founderBuilder": "I'm a Builder",
+    "switchToInvestor": "Switch to Investor View",
+    "switchToBuilder": "Switch to Builder View"
+  },
+  "actions": {
+    "explore": "Explore",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "joinWaitlist": "Join Waitlist",
+    "contactUs": "Contact Us",
+    "download": "Download",
+    "compare": "Compare",
+    "filter": "Filter",
+    "search": "Search",
+    "save": "Save",
+    "share": "Share",
+    "close": "Close"
+  },
+  "metrics": {
+    "gdpGrowth": "GDP Growth",
+    "jobsCreated": "Jobs Created",
+    "exports": "Exports",
+    "investment": "Investment",
+    "readiness": "Readiness",
+    "impact": "Impact",
+    "growth": "Growth",
+    "target": "Target",
+    "baseline": "Baseline"
+  },
+  "pillars": {
+    "economic": "Economic Transformation",
+    "social": "Social Transformation",
+    "governance": "Transformational Governance"
+  },
+  "footer": {
+    "developedBy": "Developed by Project Future",
+    "copyright": "© 2025 KigaliFutureStack. All rights reserved.",
+    "dataAttribution": "Data sourced from NST2 2024-2029"
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "economic": {
+    "gdpGrowth": {
+      "value": 9.3,
+      "unit": "percentage",
+      "baseline": 8.2,
+      "target2026": 8.3,
+      "target2029": 9.3,
+      "source": "NST2 M&E Matrix",
+      "page": 45
+    },
+    "gdpPerCapita": {
+      "value": 1369,
+      "unit": "USD",
+      "baseline": 1040,
+      "target2026": 1047,
+      "target2029": 1369,
+      "source": "NST2 M&E Matrix",
+      "page": 45
+    },
+    "nominalGDP": {
+      "value": 37413,
+      "unit": "Billion FRW",
+      "baseline": 16355,
+      "target2026": 24068,
+      "target2029": 37413,
+      "source": "NST2 M&E Matrix",
+      "page": 45
+    },
+    "nationalSavings": {
+      "value": 25.9,
+      "unit": "percentage of GDP",
+      "baseline": 12.4,
+      "target2026": 19.6,
+      "target2029": 25.9,
+      "source": "NST2 M&E Matrix",
+      "page": 45
+    },
+    "privateInvestment": {
+      "value": 4.6,
+      "unit": "Billion USD",
+      "baseline": 2.2,
+      "target2026": 3.1,
+      "target2029": 4.6,
+      "source": "NST2 M&E Matrix",
+      "page": 45
+    },
+    "exports": {
+      "value": 7316,
+      "unit": "Million USD",
+      "baseline": 3509,
+      "target2026": 4994,
+      "target2029": 7316,
+      "source": "NST2 M&E Matrix",
+      "page": 45
+    },
+    "jobsCreated": {
+      "value": 1250000,
+      "unit": "number",
+      "baseline": 1374204,
+      "target2026": 750000,
+      "target2029": 1250000,
+      "source": "NST2 M&E Matrix",
+      "page": 45
+    }
+  },
+  "sectorGrowth": {
+    "agriculture": {
+      "baseline": 1.7,
+      "target2029": 6.0,
+      "unit": "percentage"
+    },
+    "industry": {
+      "baseline": 10.2,
+      "target2029": 10.6,
+      "unit": "percentage"
+    },
+    "services": {
+      "baseline": 11.2,
+      "target2029": 10.2,
+      "unit": "percentage"
+    },
+    "manufacturing": {
+      "baseline": 8.5,
+      "target2029": 10.4,
+      "unit": "percentage"
+    }
+  },
+  "social": {
+    "stuntingReduction": {
+      "value": 15,
+      "unit": "percentage",
+      "baseline": 33,
+      "target2029": 15,
+      "source": "NST2 Social Transformation",
+      "page": 25
+    },
+    "lifeExpectancy": {
+      "value": 69.9,
+      "unit": "years",
+      "baseline": 66.6,
+      "source": "NST1 Achievements",
+      "page": 5
+    },
+    "prePrimaryEnrollment": {
+      "value": 65,
+      "unit": "percentage",
+      "baseline": 35,
+      "target2029": 65,
+      "source": "NST2 Education",
+      "page": 25
+    },
+    "digitalLiteracy": {
+      "value": 100,
+      "unit": "percentage",
+      "baseline": 53,
+      "target2029": 100,
+      "source": "NST2 Digital Transformation",
+      "page": 19
+    }
+  },
+  "infrastructure": {
+    "electricityAccess": {
+      "value": 100,
+      "unit": "percentage of cells",
+      "baseline": 91,
+      "target2026": 96,
+      "target2029": 100,
+      "source": "NST2 M&E Matrix",
+      "page": 50
+    },
+    "renewableEnergy": {
+      "value": 60,
+      "unit": "percentage",
+      "baseline": 51,
+      "target2026": 53.8,
+      "target2029": 60,
+      "source": "NST2 M&E Matrix",
+      "page": 50
+    },
+    "waterAccess": {
+      "value": 100,
+      "unit": "percentage of villages",
+      "baseline": 80,
+      "target2026": 90,
+      "target2029": 100,
+      "source": "NST2 M&E Matrix",
+      "page": 50
+    },
+    "irrigation": {
+      "value": 132171,
+      "unit": "hectares",
+      "baseline": 71549,
+      "target2026": 99260,
+      "target2029": 132171,
+      "source": "NST2 M&E Matrix",
+      "page": 47
+    }
+  },
+  "tourism": {
+    "revenue": {
+      "value": 1100,
+      "unit": "Million USD",
+      "baseline": 620,
+      "target2026": 908,
+      "target2029": 1100,
+      "source": "NST2 M&E Matrix",
+      "page": 50
+    },
+    "miningRevenue": {
+      "value": 2.17,
+      "unit": "Billion USD",
+      "baseline": 1.1,
+      "target2026": 1.6,
+      "target2029": 2.17,
+      "source": "NST2 M&E Matrix",
+      "page": 50
+    },
+    "miceRevenue": {
+      "value": 224,
+      "unit": "Million USD",
+      "baseline": 95,
+      "target2026": 156,
+      "target2029": 224,
+      "source": "NST2 M&E Matrix",
+      "page": 50
+    }
+  }
+}

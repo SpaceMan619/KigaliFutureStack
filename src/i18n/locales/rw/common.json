@@ -1,0 +1,57 @@
+{
+  "app": {
+    "name": "KigaliFutureStack",
+    "tagline": "Menya Amahirwe yo Guhindura u Rwanda",
+    "description": "Injira mu mahirwe yo gushora no gutangira ubucuruzi mu Rwanda"
+  },
+  "nav": {
+    "home": "Ahabanza",
+    "opportunityAtlas": "Ikarita y'Amahirwe",
+    "startupIdeas": "Ibitekerezo bya Startup",
+    "nst2Explorer": "NST2 Explorer",
+    "buildersToolkit": "Ibikoresho by'Abubaki",
+    "about": "Ibyerekeye",
+    "contact": "Twandikire"
+  },
+  "audience": {
+    "investorPartner": "Ndi Mushoramari/Mufatanyabikorwa",
+    "founderBuilder": "Ndi Umubaki",
+    "switchToInvestor": "Hindura ku ruhare rw'Umushoramari",
+    "switchToBuilder": "Hindura ku ruhare rw'Umubaki"
+  },
+  "actions": {
+    "explore": "Shaka",
+    "learnMore": "Menya byinshi",
+    "getStarted": "Tangira",
+    "joinWaitlist": "Injira mu rutonde",
+    "contactUs": "Twandikire",
+    "download": "Kuramo",
+    "compare": "Gereranya",
+    "filter": "Suzuma",
+    "search": "Shaka",
+    "save": "Bika",
+    "share": "Sangira",
+    "close": "Funga"
+  },
+  "metrics": {
+    "gdpGrowth": "Kukura kwa GDP",
+    "jobsCreated": "Imirimo Yaremwe",
+    "exports": "Ibicuruzwa",
+    "investment": "Ibishoramari",
+    "readiness": "Kwitegura",
+    "impact": "Ingaruka",
+    "growth": "Kukura",
+    "target": "Intego",
+    "baseline": "Ingingo"
+  },
+  "pillars": {
+    "economic": "Impinduka z'Ubukungu",
+    "social": "Impinduka mu Muryango",
+    "governance": "Ubuyobozi bw'Impinduka"
+  },
+  "footer": {
+    "developedBy": "Yakozwe na Project Future",
+    "copyright": "© 2025 KigaliFutureStack. Uburenganzira bwose bwareservwa.",
+    "dataAttribution": "Amakuru ava muri NST2 2024-2029"
+  }
+}
