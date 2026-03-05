@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
+import {
   Lightbulb, ArrowRight, Plus, Minus, Scale
 } from 'lucide-react';
 import { GlassCard } from '@/components/glass/GlassCard';
@@ -96,12 +96,12 @@ export function StartupIdeas() {
               {compareList.slice(0, 2).map(id => {
                 const opp = opportunities.find(o => o.id === id);
                 return opp ? (
-                  <span 
+                  <span
                     key={id}
                     className="px-2 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs flex items-center gap-1"
                   >
                     {opp.name.substring(0, 10)}...
-                    <button 
+                    <button
                       onClick={() => toggleCompare(id)}
                       className="text-emerald-300 hover:text-white"
                     >
@@ -141,16 +141,16 @@ export function StartupIdeas() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Tabs defaultValue="all" className="w-full">
             <TabsList className="bg-white/5 border border-white/10 mb-8 flex flex-wrap justify-center">
-              <TabsTrigger value="all" className="data-[state=active]:bg-emerald-500">
+              <TabsTrigger value="all" className="data-[state=active]:bg-emerald-500 data-[state=active]:text-white text-white/70 hover:text-white">
                 {locale === 'en' ? 'All Ideas' : 'Ibitekerezo Byose'}
               </TabsTrigger>
-              <TabsTrigger value="low-capital" className="data-[state=active]:bg-emerald-500">
+              <TabsTrigger value="low-capital" className="data-[state=active]:bg-emerald-500 data-[state=active]:text-white text-white/70 hover:text-white">
                 {locale === 'en' ? 'Low Capital' : 'Amafaranga Make'}
               </TabsTrigger>
-              <TabsTrigger value="high-impact" className="data-[state=active]:bg-emerald-500">
+              <TabsTrigger value="high-impact" className="data-[state=active]:bg-emerald-500 data-[state=active]:text-white text-white/70 hover:text-white">
                 {locale === 'en' ? 'High Impact' : 'Ingaruka Nini'}
               </TabsTrigger>
-              <TabsTrigger value="quick-start" className="data-[state=active]:bg-emerald-500">
+              <TabsTrigger value="quick-start" className="data-[state=active]:bg-emerald-500 data-[state=active]:text-white text-white/70 hover:text-white">
                 {locale === 'en' ? 'Quick Start' : 'Gutangira Vuba'}
               </TabsTrigger>
             </TabsList>
@@ -181,11 +181,10 @@ export function StartupIdeas() {
                           </div>
                           <button
                             onClick={() => toggleCompare(opp.id)}
-                            className={`p-2 rounded-lg transition-colors ${
-                              compareList.includes(opp.id)
+                            className={`p-2 rounded-lg transition-colors ${compareList.includes(opp.id)
                                 ? 'bg-emerald-500 text-white'
                                 : 'bg-white/10 text-white/60 hover:bg-white/20'
-                            }`}
+                              }`}
                             disabled={!compareList.includes(opp.id) && compareList.length >= 4}
                           >
                             {compareList.includes(opp.id) ? (
@@ -230,7 +229,7 @@ export function StartupIdeas() {
                         {/* Business Models */}
                         <div className="flex flex-wrap gap-2 mb-4">
                           {opp.businessModels.map((model, i) => (
-                            <span 
+                            <span
                               key={i}
                               className="px-2 py-1 rounded-md bg-white/5 text-white/60 text-xs"
                             >
@@ -246,7 +245,7 @@ export function StartupIdeas() {
                             <span>{locale === 'en' ? 'Market Adoption' : 'Kwemera kw\'Isoko'}</span>
                           </div>
                           <div className="relative h-24 bg-white/5 rounded-lg">
-                            <div 
+                            <div
                               className="absolute w-4 h-4 rounded-full bg-emerald-500 shadow-lg shadow-emerald-500/50"
                               style={{
                                 left: getCapitalIntensityPosition(opp.capitalIntensity),
@@ -276,7 +275,7 @@ export function StartupIdeas() {
                           <p className="text-xs text-white/50 mb-2">{locale === 'en' ? 'Skills Needed' : 'Ubuhanga Bukenewe'}</p>
                           <div className="flex flex-wrap gap-1">
                             {opp.skillsNeeded.map((skill, i) => (
-                              <span 
+                              <span
                                 key={i}
                                 className="px-2 py-0.5 rounded bg-white/5 text-white/60 text-xs"
                               >

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
+import {
   Rocket, Users, DollarSign, CheckCircle,
   ArrowRight, Calendar, TrendingUp, Shield, Zap,
   BookOpen, Video, MessageCircle, FileText, ExternalLink
@@ -162,7 +162,7 @@ export function BuildersToolkit() {
 
   const getProgress = (phaseIndex: number) => {
     const phase = roadmapData[phaseIndex];
-    const completed = phase.tasks.filter((_, i) => 
+    const completed = phase.tasks.filter((_, i) =>
       completedTasks[`${phaseIndex}-${i}`]
     ).length;
     return (completed / phase.tasks.length) * 100;
@@ -199,19 +199,19 @@ export function BuildersToolkit() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Tabs defaultValue="roadmap" className="w-full">
             <TabsList className="bg-white/5 border border-white/10 mb-8 flex flex-wrap justify-center">
-              <TabsTrigger value="roadmap" className="data-[state=active]:bg-emerald-500">
+              <TabsTrigger value="roadmap" className="data-[state=active]:bg-emerald-500 data-[state=active]:text-white text-white/70 hover:text-white">
                 <Calendar className="w-4 h-4 mr-2" />
                 {locale === 'en' ? '90-Day Roadmap' : 'Urugendo rw\'Iminsi 90'}
               </TabsTrigger>
-              <TabsTrigger value="funding" className="data-[state=active]:bg-emerald-500">
+              <TabsTrigger value="funding" className="data-[state=active]:bg-emerald-500 data-[state=active]:text-white text-white/70 hover:text-white">
                 <DollarSign className="w-4 h-4 mr-2" />
                 {locale === 'en' ? 'Funding Navigator' : 'Urugendo rw\'Amafaranga'}
               </TabsTrigger>
-              <TabsTrigger value="gtm" className="data-[state=active]:bg-emerald-500">
+              <TabsTrigger value="gtm" className="data-[state=active]:bg-emerald-500 data-[state=active]:text-white text-white/70 hover:text-white">
                 <Rocket className="w-4 h-4 mr-2" />
                 {locale === 'en' ? 'Go-to-Market' : 'Kujya ku Isoko'}
               </TabsTrigger>
-              <TabsTrigger value="resources" className="data-[state=active]:bg-emerald-500">
+              <TabsTrigger value="resources" className="data-[state=active]:bg-emerald-500 data-[state=active]:text-white text-white/70 hover:text-white">
                 <BookOpen className="w-4 h-4 mr-2" />
                 {locale === 'en' ? 'Resources' : 'Ibikoresho'}
               </TabsTrigger>
@@ -243,8 +243,8 @@ export function BuildersToolkit() {
                           </span>
                         </div>
                       </div>
-                      <Progress 
-                        value={getProgress(phaseIndex)} 
+                      <Progress
+                        value={getProgress(phaseIndex)}
                         className="h-2 mb-6 bg-white/10"
                       />
                       <div className="space-y-3">
@@ -255,16 +255,13 @@ export function BuildersToolkit() {
                             <div
                               key={taskIndex}
                               onClick={() => toggleTask(taskKey)}
-                              className={`flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-colors ${
-                                isCompleted ? 'bg-emerald-500/10' : 'bg-white/5 hover:bg-white/10'
-                              }`}
+                              className={`flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-colors ${isCompleted ? 'bg-emerald-500/10' : 'bg-white/5 hover:bg-white/10'
+                                }`}
                             >
-                              <CheckCircle className={`w-5 h-5 ${
-                                isCompleted ? 'text-emerald-400' : 'text-white/30'
-                              }`} />
-                              <span className={`text-sm ${
-                                isCompleted ? 'text-white/70 line-through' : 'text-white'
-                              }`}>
+                              <CheckCircle className={`w-5 h-5 ${isCompleted ? 'text-emerald-400' : 'text-white/30'
+                                }`} />
+                              <span className={`text-sm ${isCompleted ? 'text-white/70 line-through' : 'text-white'
+                                }`}>
                                 {task}
                               </span>
                             </div>
